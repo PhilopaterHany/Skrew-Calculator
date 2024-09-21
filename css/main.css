@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-green: #58a404;
+    --main-red: #830a38;
+    --main-blue: #06208b;
+    --main-purple: #28213d;
+    --main-yellow: #f4a039;
+}
+
+body {
+    direction: rtl;
+    display: -webkit-box; /* Old Safari */
+    display: -ms-flexbox; /* IE 10 */
+    display: flex;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 30px;
+    color: #fff;
+    background-color: #6e54a3;
+    font-family: "Cairo", sans-serif;
+    font-weight: 800;
+}
+
+#swal2-html-container {
+    position: relative;
+}
+
+#player-select {
+    width: 100%;
+    padding: 10px 10px 10px 7px;
+    border-radius: 5px;
+    border: 1px solid #d3d3d3;
+    font-size: 22px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+#player-select:focus {
+    border-color: #66afe9;
+    outline: none;
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
+}
+
+#player-select:focus + i,
+#player-select:active + i {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+#confirm-button {
+    padding: 0.4em 1.2em;
+    border: none;
+    border-radius: 0.1875em;
+    background-color: #7066e0;
+    color: #fff;
+    font-size: 1.25em;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#swal2-html-container i {
+    position: absolute;
+    left: 45px;
+    top: 40px;
+    color: #333;
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -ms-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+}
+
+header {
+    width: 100%;
+    padding-block: 5px;
+    text-align: center;
+    font-size: 1.5rem;
+    background-color: var(--main-blue);
+    border: 1px solid var(--main-yellow);
+}
+
+main {
+    width: 100%;
+    flex: 1;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
+
+thead tr th,
+tfoot tr td {
+    height: 75px;
+}
+
+thead th input {
+    background-color: var(--main-red);
+}
+
+thead tr th,
+table tr td {
+    background-color: var(--main-purple);
+}
+
+thead tr th:first-of-type,
+tfoot tr td:first-of-type {
+    color: #000;
+    background-color: var(--main-yellow);
+    font-weight: 900;
+}
+
+td,
+th {
+    overflow: hidden;
+    text-align: center;
+    font-size: 18px;
+    border-bottom: 2px solid var(--main-yellow);
+    border-left: 2px solid var(--main-yellow);
+    max-width: 120px;
+}
+
+tbody tr td {
+    height: 60px;
+    position: relative;
+}
+
+tbody tr td:first-of-type {
+    background-color: var(--main-blue);
+}
+
+tr td.lowest-sum {
+    background-color: var(--main-green) !important;
+}
+
+/* tbody tr td .note {
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+    color: #fff;
+    font-size: 12px;
+} */
+
+input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: center;
+    color: #fff;
+    background-color: transparent;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+footer {
+    width: 100%;
+    margin-top: 15px;
+    text-align: center;
+    background-color: transparent;
+}
+
+footer a,
+footer span {
+    color: var(--main-yellow);
+    text-decoration: none;
+}
+
+@media (max-width: 767px) {
+    body {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    td,
+    th,
+    input {
+        font-size: 14px;
+    }
+}
+
+div:where(.swal2-container).swal2-backdrop-show,
+div:where(.swal2-container).swal2-noanimation {
+    background: none !important;
+}
