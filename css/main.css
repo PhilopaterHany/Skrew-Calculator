@@ -5,7 +5,7 @@
 }
 
 :root {
-    --main-green: #58a404;
+    --main-green: #168000;
     --main-red: #830a38;
     --main-blue: #06208b;
     --main-purple: #28213d;
@@ -13,18 +13,6 @@
 }
 
 body {
-    direction: rtl;
-    display: -webkit-box; /* Old Safari */
-    display: -ms-flexbox; /* IE 10 */
-    display: flex;
-    -webkit-justify-content: center;
-    -ms-justify-content: center;
-    justify-content: center;
-    -webkit-align-items: center;
-    -ms-align-items: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 50px 30px;
     color: #fff;
     background-color: #6e54a3;
     font-family: "Cairo", sans-serif;
@@ -88,19 +76,14 @@ body {
     transition: 0.2s ease-in-out;
 }
 
-header {
-    width: 100%;
-    padding-block: 5px;
-    text-align: center;
-    font-size: 1.5rem;
-    background-color: var(--main-blue);
-    border: 1px solid var(--main-yellow);
+button {
+    outline: none;
 }
 
-main {
-    width: 100%;
-    flex: 1;
+header {
+    padding-block: 25px;
     text-align: center;
+    font-size: 1.5rem;
 }
 
 table {
@@ -109,22 +92,27 @@ table {
     border-collapse: collapse;
 }
 
-thead tr th,
-tfoot tr td {
+thead th,
+tfoot td {
     height: 75px;
 }
 
-thead th input {
+thead input {
     background-color: var(--main-red);
 }
 
-thead tr th,
-table tr td {
+thead th,
+table td {
     background-color: var(--main-purple);
 }
 
-thead tr th:first-of-type,
-tfoot tr td:first-of-type {
+tbody td {
+    height: 60px;
+    position: relative;
+}
+
+thead th:first-of-type,
+tfoot td:first-of-type {
     color: #000;
     background-color: var(--main-yellow);
     font-weight: 900;
@@ -135,37 +123,41 @@ th {
     overflow: hidden;
     text-align: center;
     font-size: 18px;
-    border-bottom: 2px solid var(--main-yellow);
-    border-left: 2px solid var(--main-yellow);
     max-width: 120px;
+    border-bottom: 1px solid var(--main-yellow);
+    border-inline-end: 1px solid var(--main-yellow);
 }
 
-tbody tr td {
-    height: 60px;
-    position: relative;
+tfoot td {
+    border-bottom: none;
 }
 
-tbody tr td:first-of-type {
+tbody td:first-of-type {
     background-color: var(--main-blue);
+    min-width: 65px;
 }
 
-tr td.lowest-sum {
+table td:last-of-type,
+table th:last-of-type {
+    border-inline-end: none;
+}
+
+td.lowest-sum {
     background-color: var(--main-green) !important;
 }
 
-/* tbody tr td .note {
+tbody tr td .note {
     position: absolute;
     bottom: 0;
-    left: 5px;
+    right: 5px;
     color: #fff;
     font-size: 12px;
-} */
+}
 
 input {
     height: 100%;
     width: 100%;
     border: none;
-    outline: none;
     text-align: center;
     color: #fff;
     background-color: transparent;
@@ -178,11 +170,74 @@ input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
 }
 
+.btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-block: 15px;
+}
+
+.btns button {
+    width: 150px;
+    font-weight: bold;
+    padding: 15px 10px;
+    background-color: var(--main-yellow);
+    cursor: pointer;
+    border: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+
 footer {
     width: 100%;
-    margin-top: 15px;
     text-align: center;
-    background-color: transparent;
+    padding-bottom: 10px;
+}
+
+.history-container {
+    max-height: 600px;
+    overflow-y: auto;
+    color: #fff;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.history-table th {
+    background-color: var(--main-red);
+    font-weight: bold;
+}
+
+.history-table th,
+.history-table td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.history-table td:last-of-type {
+    color: var(--main-green);
+    font-weight: bold;
+}
+
+.clear-history-btn {
+    margin-top: 15px;
+    padding: 8px 16px;
+    background-color: #c0392b;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
 }
 
 footer a,
@@ -203,13 +258,44 @@ footer span {
         font-size: 14px;
     }
 
-    h1 {
-        font-size: 24px;
+    header {
+        padding-block: 20px;
     }
 
     td,
     th,
     input {
+        font-size: 14px;
+    }
+
+    .note {
+        font-size: 10px !important;
+    }
+
+    .btns {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    h2 {
+        font-size: 1.75rem !important;
+    }
+
+    #swal2-title {
+        padding: 10px;
+        padding-bottom: 0;
+    }
+
+    #swal2-html-container {
+        padding: 10px;
+    }
+
+    body > div.swal2-container.swal2-center.swal2-backdrop-show > div {
+        padding-bottom: 10px;
+    }
+
+    .clear-history-btn {
+        margin-top: 25px;
         font-size: 14px;
     }
 }
