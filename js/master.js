@@ -16,7 +16,7 @@ Swal.fire({
     html: `
         <select class="swal2-input" id="player-select">
             ${Array.from(
-                { length: 5 },
+                { length: 6 },
                 (_, i) => `<option value="${i + 2}">${i + 2}</option>`
             ).join("")}
         </select>
