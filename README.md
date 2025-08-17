@@ -12,14 +12,14 @@ Skrew Calculator is a web-based tool designed to simplify scoring for the card g
 
 -   **Interactive Interface:** A user-friendly web interface for entering game details and viewing calculated scores.
 -   **Real-time Updates:** Scores are calculated dynamically without the need for page refresh.
--   **Flexible:** Includes a modal for selecting the number of players (from 2 to 8).
+-   **Flexible:** Includes a modal for selecting the number of players (from 2 to 7).
 -   **Clear:** Links to a YouTube video explaining the game rules.
 
 ## Usage
 
 1- Open the Skrew Calculator using the following link: [Skrew Calculator](https://philopaterhany.github.io/Skrew-Calculator/)
 
-2- Select the number of players (from 2 to 8) using the select box.
+2- Select the number of players (from 2 to 7) using the select box.
 
 3- Enter the names of the players in the provided fields.
 
@@ -42,13 +42,9 @@ After each round:
 -   **Double Round Scores:**
 
     -   Automatically double the scores of the fifth round as part of the game rules.
-    -   Allow players to manually double the score of a specific round when needed.
 
 -   **"Skrew" Tracking:**  
      Add a feature to automatically record which player declares "Skrew" during the game. This feature will seamlessly integrate into the score calculation, eliminating the need for players to manually calculate and input adjusted scores. By tracking this declaration, the app ensures accurate and hassle-free score management.
-
--   **Design Customization:**  
-     Update the app's design by adjusting the colors, fonts, and other visual elements to improve the overall look and feel of the interface. This should be done without user input, to ensure a more polished and cohesive design.
 
 ## Authors
 
